@@ -1,4 +1,4 @@
-import images from "../../utils/images";
+import images from '../../utils/images';
 
 describe('Tests for images function', () => {
   it('expects imageProcess("img4", 200, 200) to be resolved', async () => {

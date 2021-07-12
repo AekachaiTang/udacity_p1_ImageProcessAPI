@@ -1,4 +1,4 @@
-import fileExist from "../../utils/fileExist";
+import fileExist from '../../utils/fileExist';
 
 describe('Tests for fileExist func', () => {
   const wrongPath = './upload/upload/photo/img3.jpg';
@@ -12,5 +12,4 @@ describe('Tests for fileExist func', () => {
     const result = await fileExist(wrongPath);
     expect(result).toBeFalse();
   });
-
 });
