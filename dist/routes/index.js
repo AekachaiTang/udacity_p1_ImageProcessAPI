@@ -7,7 +7,10 @@ const express_1 = __importDefault(require("express"));
 const main_1 = __importDefault(require("./main"));
 const routes = express_1.default.Router();
 routes.get('/', ((req, res) => {
-    res.send('Main Api Routes');
+    res.render('index', {
+        title: 'Main Page App',
+        welcomeMsg: 'Image Processing API'
+    });
 }));
 routes.use('/main', main_1.default);
 exports.default = routes;

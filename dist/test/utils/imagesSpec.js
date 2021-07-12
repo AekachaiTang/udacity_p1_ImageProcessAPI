@@ -12,21 +12,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const supertest_1 = __importDefault(require("supertest"));
-const app_1 = __importDefault(require("../app"));
-const request = supertest_1.default(app_1.default);
-describe('Test endpoint responses', () => {
-    describe('Test the / endpoint', () => {
-        it('gets the / endpoint', () => __awaiter(void 0, void 0, void 0, function* () {
-            const response = yield request.get('/');
-            expect(response.status).toEqual(200);
-        }));
-    });
-    describe('Test a wrong endpoint', () => {
-        it('send message to browser for endpoint "/404"', () => __awaiter(void 0, void 0, void 0, function* () {
-            const response = yield request.get('/404');
-            expect(response).withContext('Wrong route, please enter a valid route, such as: http://localhost:3000/main');
-        }));
-    });
+const images_1 = __importDefault(require("../../utils/images"));
+describe('Tests for images function', () => {
+    it('expects imageProcess("img4", 200, 200) to be resolved', () => __awaiter(void 0, void 0, void 0, function* () {
+        yield expectAsync(images_1.default('img4', 200, 200)).toBeResolved();
+    }));
+    it('expects images("img4", 200, 200) to be rejected', () => __awaiter(void 0, void 0, void 0, function* () {
+        yield expectAsync(images_1.default('imgg4', 200, 200)).toBeRejected();
+    }));
 });
-//# sourceMappingURL=indexSpec.js.map
+//# sourceMappingURL=imagesSpec.js.map

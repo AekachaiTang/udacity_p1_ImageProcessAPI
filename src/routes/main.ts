@@ -17,14 +17,17 @@ main.get('/',
             const exist = await fileExist(imagePath);
             const outPutFileExist = await fileExist(outputFile);
 
+
             if (!exist) {
                 res.send(
                     'Invalid file name, not found. Please enter a valid file name. Such as: http://localhost:3000/main?filename=img&width=200&height=200'
                 );
+
             } else if (!width || !height) {
-                res.send(
+               res.send(
                     'Please enter valid numbers for width and height. Such as: http://localhost:3000/main?filename=img&width=200&height=200'
                 );
+
             } else if (width < 0 || height < 0) {
                 res.send(
                     'Please enter numbers for both width and height that are above 0'
@@ -35,6 +38,7 @@ main.get('/',
             } else {
                 res.status(200).sendFile(outputFile);
             }
+
         } catch (e) {
             console.error('error in getting images path', e);
         }

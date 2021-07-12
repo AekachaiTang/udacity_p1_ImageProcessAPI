@@ -20,6 +20,7 @@ const main = express_1.default.Router();
 main.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const fileName = req.query.filename;
     const outputFile = `${config_1.default.DIR_PATH}/thumb/${req.query.filename}${req.query.width}X${req.query.height}.jpg`;
+    let welcomeMsg = "no Msg";
     const width = parseInt(req.query.width) || null;
     const height = parseInt(req.query.height) || null;
     const imagePath = `${config_1.default.DIR_PATH}/photo/${fileName}.jpg`;

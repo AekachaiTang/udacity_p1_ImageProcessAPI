@@ -12,21 +12,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const supertest_1 = __importDefault(require("supertest"));
-const app_1 = __importDefault(require("../app"));
-const request = supertest_1.default(app_1.default);
-describe('Test endpoint responses', () => {
-    describe('Test the / endpoint', () => {
-        it('gets the / endpoint', () => __awaiter(void 0, void 0, void 0, function* () {
-            const response = yield request.get('/');
-            expect(response.status).toEqual(200);
-        }));
-    });
-    describe('Test a wrong endpoint', () => {
-        it('send message to browser for endpoint "/404"', () => __awaiter(void 0, void 0, void 0, function* () {
-            const response = yield request.get('/404');
-            expect(response).withContext('Wrong route, please enter a valid route, such as: http://localhost:3000/main');
-        }));
-    });
+const fileExist_1 = __importDefault(require("../../utils/fileExist"));
+describe('Tests for fileExist func', () => {
+    const wrongPath = './upload/upload/photo/img3.jpg';
+    const rightPath = './upload/upload/photo/img1.jpg';
+    it('expects fileExist rightPath to be true', () => __awaiter(void 0, void 0, void 0, function* () {
+        const result = yield fileExist_1.default(rightPath);
+        expect(result).toBeTrue();
+    }));
+    it('expects fileExist(wrongPath) to be false', () => __awaiter(void 0, void 0, void 0, function* () {
+        const result = yield fileExist_1.default(wrongPath);
+        expect(result).toBeFalse();
+    }));
 });
-//# sourceMappingURL=indexSpec.js.map
+//# sourceMappingURL=fileExistSpec.js.map

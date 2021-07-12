@@ -2,9 +2,9 @@
   "name": "udacity_p1",
   "version": "1.0.0",
   "description": "Udacity project - Image Processing API",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon src/index.ts",
+    "start": "nodemon src/app.ts",
     "build": "npx tsc",
     "jasmine": "jasmine",
     "test": "npm run build && npm run jasmine",
@@ -12,32 +12,36 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AekachaiTang/Udacity_JFND-Image-Processing-API.git"
+    "url": "https://github.com/AekachaiTang/udacity_p1_ImageProcessAPI.git"
   },
-  "author": "",
+  "author": "Aekachai Tangratanavalee",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AekachaiTang/Udacity_JFND-Image-Processing-API/issues"
+    "url": "https://github.com/AekachaiTang/udacity_p1_ImageProcessAPI/issues"
   },
-  "homepage": "https://github.com/AekachaiTang/Udacity_JFND-Image-Processing-API#readme",
+  "homepage": "https://github.com/AekachaiTang/udacity_p1_ImageProcessAPI#readme",
   "devDependencies": {
     "@types/express": "^4.17.13",
+    "@types/jasmine": "^3.7.7",
     "@types/sharp": "^0.28.3",
-    "ts-node": "^10.0.0",
+    "@types/supertest": "^2.0.11",
+    "jasmine": "^3.8.0",
     "nodemon": "^2.0.12",
     "prettier": "^2.3.2",
+    "ts-node": "^10.0.0",
     "tslint": "^6.1.3",
-    "typescript": "^4.3.5",
-    "@types/supertest": "^2.0.11",
-    "@types/jasmine": "^3.7.7"
+    "typescript": "^4.3.5"
   },
   "dependencies": {
     "@types/multer": "^1.4.7",
     "directory-tree": "^2.2.9",
     "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "hbs": "^4.1.2",
+    "jasmine-spec-reporter": "^7.0.0",
+    "jasmine-supertest": "^1.0.0",
     "multer": "^1.4.2",
     "sharp": "^0.28.2",
-    "jasmine": "^3.7.0",
-    "jasmine-spec-reporter": "^7.0.0"
+    "supertest": "^6.1.3"
   }
 }

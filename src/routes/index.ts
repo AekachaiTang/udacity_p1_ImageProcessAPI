@@ -4,7 +4,11 @@ import main from './main';
 const routes = express.Router();
 
 routes.get('/', ((req, res) => {
-    res.send('Main Api Routes');
+    res.render('index',
+      {
+          title: 'Main Page App',
+          welcomeMsg: 'Image Processing API'
+      })
 }));
 
 routes.use('/main', main);
